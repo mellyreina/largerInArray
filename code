@@ -1,0 +1,29 @@
+#include <iostream>
+#include <conio.h>
+using namespace std;
+
+int *enBuyukBulma(int *x, int boyut, int *max)
+{
+	int *p;
+	*max=*x;
+	
+	for(p=x; p<x+boyut; p++)
+	 if(*p>*max)
+	  *max=*p;
+	return max;
+}
+
+int main()
+{ 
+    int array[]={2,4,1,6,5,8,3,2,5,6};
+    int max_deger;
+    int *p;
+    
+    p=enBuyukBulma(array, sizeof(array)/sizeof(array[0]), &max_deger);
+    
+     cout << "dizi max deger " << *p << endl;
+     cout << "dizi max deger " << max_deger << endl;
+
+	system("pause");
+	return 0;
+}
